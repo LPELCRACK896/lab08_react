@@ -1,6 +1,7 @@
 const path  = require('path')
 const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 const MinCssExtractProduction = require("mini-css-extract-plugin")
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports  = {
     mode: "development",
@@ -12,7 +13,7 @@ module.exports  = {
     plugins:[
         new HtmlWebPackPlugin({
             filename: 'index.html', 
-            template:"index.html"
+            template:"./src/index.html"
         }),
         new MinCssExtractProduction({filename:"[name].css"}),
         new CleanWebpackPlugin()
@@ -49,7 +50,14 @@ module.exports  = {
                     presets: ['@babel/preset-env','@babel/preset-react']
                   }
                 }
-              } 
+              },
+              {
+                test: /\.(ogg|mp3|wav|mpe?g)$/i,
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name].[ext]'
+                }
+              }
         ]
     }
 }
