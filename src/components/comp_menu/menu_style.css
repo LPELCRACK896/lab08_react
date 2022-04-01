@@ -1,0 +1,17 @@
+.menu-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+#div-spacebetween{
+    height: 200px;
+}
+#start-container{
+    position: relative;
+    width: fit-content;
+    border-radius: 20px;
+    border: 6px white solid;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
