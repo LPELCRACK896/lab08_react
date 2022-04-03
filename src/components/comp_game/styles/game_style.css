@@ -25,10 +25,10 @@
 }
 header{
     height: 80px;
-    border-bottom: 1px whitesmoke solid;
+    border-bottom: 1px rgb(223, 188, 188) solid;
     display: flex; 
     justify-content: space-between;
-    position: relative;
+    position: static;
 }
 header #logo{
     height: 80%;
