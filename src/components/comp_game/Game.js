@@ -3,6 +3,7 @@ import "./styles/game_style.css"
 import Card from './Card'
 import logo from './assets/memory_game_pixel.png'
 import { Link } from 'react-router-dom'
+import random_memory_setup from './random_game_setup'
 import CaptainFalconImage from '../card_visuals/cFalcon.png'
 import FoxImage from '../card_visuals/fox.png'
 import DevilImage from '../card_visuals/devil.png'
@@ -22,17 +23,21 @@ import ScorpionImage from '../card_visuals/scorpion.png'
 
 const cards_info = require ('./cards_info')
 
-class Game extends Component {
+class Game extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       moves: 0,
-      record: 0
+      record: 0,
+      setup: random_memory_setup(),
+      oldPoints: 0,
+      points: 0,
+      id_first_card_flipped: 0,
+      id_second_card_flipped: 0, 
     }
 } 
   render() {
-    console.log(cards_info)
-
+    console.log(this.state.setup)
     return (
       <>
       <header>
@@ -46,27 +51,14 @@ class Game extends Component {
           </div>
           <div className='div-text' id="record-div">
             <div>
-              Record: {this.state.record}
+              Puntos: 0/6 
             </div>
           </div>          
       </header>
       <div id="game-grid">
-        {}
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
-        <div className="card-container"onClick={()=>this.setState({moves: this.state.moves + 1})}><Card /></div>
+        {this.state.setup.map(id =>{
+          return <div key={id} className="card-container"  onClick={()=>this.setState({moves: this.state.moves + 1})}><Card cardid={id}/></div>
+        })}
 
       </div>
       </>
