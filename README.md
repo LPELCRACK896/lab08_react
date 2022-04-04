@@ -1,4 +1,14 @@
 # React from scratch
+## Start project
+Instalar dependencias
+```
+npm i
+```
+Correr proyecto con localhost: 
+
+```
+npm start
+```
 ## NPM
 1. Inicializar pckg json
 ```
