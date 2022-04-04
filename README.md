@@ -1,4 +1,4 @@
-# React from scratch
+# Juego de memoria con react
 ## Start project
 Instalar dependencias
 ```
@@ -9,12 +9,13 @@ Correr proyecto con localhost:
 ```
 npm start
 ```
-## NPM
+## Create a react project from scratch
+### NPM
 1. Inicializar pckg json
 ```
 npm init -y
 ```
-## Babel
+### Babel
 2. Instalar babel
 ```
 npm i --save-dev @babel/core @babel/preset-env @babel/preset-react
@@ -25,7 +26,7 @@ const presets = ["@babel/preset-env", "@babel/preset-react"]
 module.exports = {presets}
 
 Y exportar el modulo
-## Webpack
+### Webpack
 4. Instalar webpack
 ```
 npm i --save-dev webpack wepack-cli
@@ -36,7 +37,7 @@ npm i --save-dev mini-css-extract-plugin
 5. Crear archivo webepack.config.js
 Utilizar el de este proyecto como base. 
 
-## NPM
+### NPM
 6. Instalar dependencia DOM react
 ```
 npm i react react-dom
