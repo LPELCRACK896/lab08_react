@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.config.js --open",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "import_gen": "nodemon import_gen.js"
   },
   "keywords": [],
   "author": "L-Dev",
@@ -31,6 +32,7 @@
     "html-loader": "^3.1.0",
     "react": "^18.0.0",
     "react-audio-player": "^0.17.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-hook-use-state": "^1.1.0"
   }
 }

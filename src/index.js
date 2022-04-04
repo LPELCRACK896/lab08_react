@@ -5,6 +5,7 @@ import './index.css'
 import Game from "./components/comp_game/Game"
 import Menu from "./components/comp_menu/Menu"
 
+
 ReactDOM.render(
     <>
     <Router>    
@@ -14,6 +15,4 @@ ReactDOM.render(
         </Routes>    
     </Router>
     </>,
-    document.getElementById("root")
-
-)
+    document.getElementById("root"))
