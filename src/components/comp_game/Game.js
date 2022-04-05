@@ -25,33 +25,25 @@ class Game extends React.Component {
     }
     this.clickRegisterCardSelected = this.clickRegisterCardSelected.bind(this);
     this.resetFlip = this.resetFlip.bind(this)
-    console.log(this.state.setup)
     this.state.setup.map(id => this.state.flipped.set(id, false))
 
   }
   resetFlip(firstId, secondId){
     this.state.flipped.set(firstId, !this.state.flipped.get(firstId))
     this.state.flipped.set(secondId, !this.state.flipped.get(secondId))
-/*     console.log(secondId,this.state.flipped.get(secondId))
-    console.log(firstId, this.state.flipped.get(firstId)) */
+
   }
   clickRegisterCardSelected($event) {
     $event.preventDefault();
-    console.log($event.target)
     if($event.target.className!="front"&&$event.target.className!=null){//SI tiene un ID valido pues
-      console.log("Revelo")
       if(!this.state.solved.includes(cards_info.find(card => card.id==$event.target.className))){
         if (this.state.first_card_flipped==null){
           //No se ha volteado ninguna carta
-          console.log($event.target.className)
           this.state.flipped.set(cards_info.find(card => card.id==$event.target.className).id, true)
-          console.log("nueva primera carta")
           this.state.first_card_flipped= cards_info.find(card => card.id==$event.target.className)
           this.state.count_cards_flipped +=1
           
         }else{
-          console.log($event.target.className)
-          console.log("segunda carta")
           //Se esta volteando la segunda carta
           this.state.flipped.set(cards_info.find(card => card.id==$event.target.className).id, true)
           if (this.state.first_card_flipped.pair_id
@@ -63,7 +55,6 @@ class Game extends React.Component {
             this.state.solved.push((this.state.first_card_flipped.id))
           }else{
               //No coincide la segunda carta
-              console.log("no coincidio")
               this.state.coincidio = false
               //Esto tengo que hacer que lo haga después de un tiempo, para que se vea la segunda carta
               this.resetFlip(cards_info.find(card => card.id==$event.target.className).id,this.state.first_card_flipped.id )
@@ -73,12 +64,9 @@ class Game extends React.Component {
           
         }
       }
-      console.log(this.state.flipped)
     } else{
-      console.log("Escondio")
     }
     if(this.state.points>=6){
-      console.log("Gano")
       this.state.win = true
     }
   }
