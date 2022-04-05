@@ -18,7 +18,7 @@ class Menu extends Component {
             </div>
           </Link>
           <p>
-            Recargar esta pagina para obtener un nuevo orden para las cartas
+            Recarga esta pagina para obtener un nuevo orden para las cartas
           </p>
       </div>
     )
