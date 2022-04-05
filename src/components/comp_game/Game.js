@@ -14,7 +14,7 @@ class Game extends React.Component {
     this.state = {
       moves: 0,
       record: 0,
-      setup: random_memory_setup(),
+      setup: [],
       oldPoints: 0,
       points: 0,
       win: false, 
@@ -23,6 +23,7 @@ class Game extends React.Component {
       flipped: new Map(),
       coincidio: null
     }
+    this.state.setup = random_memory_setup()
     this.clickRegisterCardSelected = this.clickRegisterCardSelected.bind(this);
     this.resetFlip = this.resetFlip.bind(this)
     this.state.setup.map(id => this.state.flipped.set(id, false))
@@ -71,6 +72,7 @@ class Game extends React.Component {
     }
   }
   render() {
+    
     return (
       <>
       <header>

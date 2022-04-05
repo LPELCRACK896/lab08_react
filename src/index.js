@@ -6,7 +6,7 @@ import Game from "./components/comp_game/Game"
 import Menu from "./components/comp_menu/Menu"
 const container = document.getElementById('root')
 const root = createRoot(container)
-const App = ()=>{
+const App = () =>{
     return <div>
     <Router>    
         <Routes>

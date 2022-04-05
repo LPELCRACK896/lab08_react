@@ -17,6 +17,9 @@ class Menu extends Component {
                 <img src={startButtomImg} alt="Juego de memoria" width='300px' id="menu-img"/>  
             </div>
           </Link>
+          <p>
+            Recargar esta pagina para obtener un nuevo orden para las cartas
+          </p>
       </div>
     )
   }

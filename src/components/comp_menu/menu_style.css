@@ -1,3 +1,11 @@
+*{
+    font-family: 'VT323', monospace;
+}
+p{
+    color: whitesmoke;
+    font-size: 50px;
+    
+}
 .menu-img {
     display: block;
     margin-left: auto;
