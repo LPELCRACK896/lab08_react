@@ -58,12 +58,12 @@ class Game extends React.Component {
               //No coincide la segunda carta
               this.state.coincidio = false
               //Esto tengo que hacer que lo haga después de un tiempo, para que se vea la segunda carta
-              this.resetFlip(cards_info.find(card => card.id==$event.target.className).id,this.state.first_card_flipped.id )
-            
+              this.resetFlip(cards_info.find(card => card.id==$event.target.className).id,this.state.first_card_flipped.id )    
           }
           this.state.first_card_flipped= null
           
         }
+        this.setState({moves: this.state.moves + 1})
       }
     } else{
     }
@@ -95,7 +95,7 @@ class Game extends React.Component {
           {this.state.setup.map((id, index) =>{
             return <div key={id} className="card-container"
             onClick={($event)=>{
-              this.setState({moves: this.state.moves + 1})
+              
               this.clickRegisterCardSelected($event)
             }
           }><Card cardid={id}  flip={this.state.flipped.get(id)}/></div>
